@@ -4,6 +4,6 @@ public class ObjectHit : MonoBehaviour
 {
   void OnCollisionEnter(Collision other)
   {
-    Debug.Log("Collided with a wall...");
+    GetComponent<MeshRenderer>().material.color = Color.red;
   }
 }
