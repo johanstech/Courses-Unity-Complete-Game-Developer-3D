@@ -293,14 +293,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.043619405, y: 0, z: 0, w: 0.9990483}
+  m_LocalPosition: {x: 0, y: 5, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 5, y: 0, z: 0}
 --- !u!1001 &1532588120877728009
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -470,25 +470,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rocket
       objectReference: {fileID: 0}
+    - target: {fileID: 4186634671292976012, guid: 8e16e4fe0c2aa5d4d9e37873cd550723, type: 3}
+      propertyPath: m_Constraints
+      value: 72
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e16e4fe0c2aa5d4d9e37873cd550723, type: 3}
---- !u!1 &4186634671292976010 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4186634670672898239, guid: 8e16e4fe0c2aa5d4d9e37873cd550723, type: 3}
-  m_PrefabInstance: {fileID: 4186634671292976009}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &4186634671292976011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4186634671292976010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a72206f3ca2f3e24293d25943787cb1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &8984041416924626587
 PrefabInstance:
   m_ObjectHideFlags: 0

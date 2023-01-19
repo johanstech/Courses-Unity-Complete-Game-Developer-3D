@@ -2,8 +2,11 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+  Rigidbody _rb;
+
   void Start()
   {
+    _rb = GetComponent<Rigidbody>();
   }
 
   void Update()
@@ -16,7 +19,7 @@ public class Movement : MonoBehaviour
   {
     if (Input.GetKey(KeyCode.Space))
     {
-      //* Thrust
+      _rb.AddRelativeForce(Vector3.up);
     }
   }
 
