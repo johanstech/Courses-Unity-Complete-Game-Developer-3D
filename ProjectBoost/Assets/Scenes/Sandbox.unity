@@ -540,6 +540,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rocket
       objectReference: {fileID: 0}
+    - target: {fileID: 6918141498172579097, guid: 8e16e4fe0c2aa5d4d9e37873cd550723, type: 3}
+      propertyPath: m_Drag
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 6918141498172579111, guid: 8e16e4fe0c2aa5d4d9e37873cd550723, type: 3}
       propertyPath: m_RootOrder
       value: 5
