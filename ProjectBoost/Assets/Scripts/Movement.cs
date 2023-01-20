@@ -2,6 +2,11 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+  [SerializeField]
+  float thrustPower = 1000f;
+  [SerializeField]
+  float rotationPower = 100f;
+
   Rigidbody _rb;
 
   void Start()
@@ -17,9 +22,9 @@ public class Movement : MonoBehaviour
 
   void ProcessThrust()
   {
-    if (Input.GetKey(KeyCode.Space))
+    if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow))
     {
-      _rb.AddRelativeForce(Vector3.up);
+      _rb.AddRelativeForce(Vector3.up * thrustPower * Time.deltaTime);
     }
   }
 
@@ -27,11 +32,18 @@ public class Movement : MonoBehaviour
   {
     if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
     {
-      //* Rotate left
+      ApplyRotation(rotationPower);
     }
     else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
     {
-      //* Rotate right
+      ApplyRotation(-rotationPower);
     }
+  }
+
+  void ApplyRotation(float rotationThisFrame)
+  {
+    _rb.freezeRotation = true;
+    transform.Rotate(Vector3.forward * rotationThisFrame * Time.deltaTime);
+    _rb.freezeRotation = false;
   }
 }
