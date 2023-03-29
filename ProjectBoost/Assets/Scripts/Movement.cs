@@ -8,10 +8,12 @@ public class Movement : MonoBehaviour
   float rotationPower = 100f;
 
   Rigidbody _rb;
+  AudioSource _audioSource;
 
   void Start()
   {
     _rb = GetComponent<Rigidbody>();
+    _audioSource = GetComponent<AudioSource>();
   }
 
   void Update()
@@ -25,6 +27,14 @@ public class Movement : MonoBehaviour
     if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow))
     {
       _rb.AddRelativeForce(Vector3.up * thrustPower * Time.deltaTime);
+      if (!_audioSource.isPlaying)
+      {
+        _audioSource.Play();
+      }
+    }
+    else
+    {
+      _audioSource.Stop();
     }
   }
 
