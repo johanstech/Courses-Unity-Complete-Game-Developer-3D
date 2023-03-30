@@ -3,6 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
+    [SerializeField]
+    private float levelDelay = 1f;
+
     private void OnCollisionEnter(Collision other)
     {
         switch (other.gameObject.tag)
@@ -11,15 +14,37 @@ public class CollisionHandler : MonoBehaviour
                 Debug.Log("This thing is friendly.");
                 break;
             case "Finish":
-                LoadNextLevel();
+                SuccessSequence();
                 break;
             default:
-                ReloadLevel();
+                CrashSequence();
                 break;
         }
     }
 
+    private void CrashSequence()
+    {
+        // TODO: Add SFX
+        // TODO: Add particle effect
+        GetComponent<Movement>().enabled = false;
+        Invoke("ReloadLevel", levelDelay);
+    }
+
+    private void SuccessSequence()
+    {
+        // TODO: Add SFX
+        // TODO: Add particle effect
+        GetComponent<Movement>().enabled = false;
+        Invoke("LoadNextLevel", levelDelay);
+    }
+
     private void ReloadLevel()
+    {
+        int currentLevel = SceneManager.GetActiveScene().buildIndex;
+        LoadLevel(currentLevel);
+    }
+
+    private void LoadNextLevel()
     {
         int currentLevel = SceneManager.GetActiveScene().buildIndex;
         int nextLevel = currentLevel + 1;
@@ -28,12 +53,6 @@ public class CollisionHandler : MonoBehaviour
             nextLevel = 0;
         }
         LoadLevel(nextLevel);
-    }
-
-    private void LoadNextLevel()
-    {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        LoadLevel(currentSceneIndex);
     }
 
     private void LoadLevel(int level)
