@@ -3,26 +3,26 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [SerializeField]
-    float thrustPower = 1000f;
+    private float thrustPower = 1000f;
     [SerializeField]
-    float rotationPower = 100f;
+    private float rotationPower = 100f;
 
-    Rigidbody _rb;
-    AudioSource _audioSource;
+    private Rigidbody _rb;
+    private AudioSource _audioSource;
 
-    void Start()
+    private void Start()
     {
         _rb = GetComponent<Rigidbody>();
         _audioSource = GetComponent<AudioSource>();
     }
 
-    void Update()
+    private void Update()
     {
         ProcessThrust();
         ProcessRotation();
     }
 
-    void ProcessThrust()
+    private void ProcessThrust()
     {
         if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow))
         {
@@ -38,7 +38,7 @@ public class Movement : MonoBehaviour
         }
     }
 
-    void ProcessRotation()
+    private void ProcessRotation()
     {
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
@@ -50,7 +50,7 @@ public class Movement : MonoBehaviour
         }
     }
 
-    void ApplyRotation(float rotationThisFrame)
+    private void ApplyRotation(float rotationThisFrame)
     {
         _rb.freezeRotation = true;
         transform.Rotate(Vector3.forward * rotationThisFrame * Time.deltaTime);
