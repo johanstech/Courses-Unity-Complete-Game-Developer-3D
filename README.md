@@ -16,6 +16,8 @@ Code along for the Udemy course [Complete C# Unity Game Developer 3D](https://ww
 
 ## :rocket: Projects
 
-|  #  |                                         Project                                          |
-| :-: | :--------------------------------------------------------------------------------------: |
-| 01  |    [Obstacle Course](https://github.com/johanstech/Courses-Unity-Complete-Game-Developer-3D/tree/master/ObstacleCourse/)    |
+|  #  |                                                        Project                                                        |
+| :-: | :-------------------------------------------------------------------------------------------------------------------: |
+| 01  | [Obstacle Course](https://github.com/johanstech/Courses-Unity-Complete-Game-Developer-3D/tree/master/ObstacleCourse/) |
+| 02  |   [Project Boost](https://github.com/johanstech/Courses-Unity-Complete-Game-Developer-3D/tree/master/ProjectBoost/)   |
+| 03  |   [Argon Assault](https://github.com/johanstech/Courses-Unity-Complete-Game-Developer-3D/tree/master/ArgonAssault/)   |
